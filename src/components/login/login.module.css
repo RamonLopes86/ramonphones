@@ -97,6 +97,24 @@
    
 }
 
+.boxCheck > input{
+
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 1px solid white;
+    transition: all 200ms linear;
+
+}
+
+.boxCheck > input[type="checkbox"]:checked{
+
+    background-color: #25d7e7;
+    transition: all 200ms linear;
+
+}
+
 
 .animaLoginOn{
 
@@ -115,7 +133,7 @@
 }
 
 
-  
+
 
 
 

@@ -79,9 +79,9 @@ export default function TelaLogin() {
                         <Login/>
 
                         
-
                         <Senha/>
 
+
                     </div>
 
                 </div>
@@ -90,48 +90,33 @@ export default function TelaLogin() {
             </section>
 
 
-            <section className={estiloLogin.boxInformacoes}>
-
-
-                <div className={estiloLogin.info}>
-
-                    <h4>Informações</h4>
-                    <p>© 2024 Todos os direitos reservados RamonPhones.</p>
-                    <p>O lugar ideal para adquirir seu novo smartphone!</p>
-
-                    <div className={estiloLogin.redes}>
-
+          
+                <section className={estiloLogin.boxInformacoes}>
+                    <div className={estiloLogin.info}>
+                        <h4>Informações</h4>
+                        <p>© 2024 Todos os direitos reservados RamonPhones.</p>
+                        <p>O lugar ideal para adquirir seu novo smartphone!</p>
+                        <div className={estiloLogin.redes}>
+                        </div>
                     </div>
-
-                </div>
-
-
-                <div className={estiloLogin.boxLinks}>
-
-                    <h4>Links Úteis</h4>
-                    <p>Inico</p>
-                    <p>Iohones</p>
-                    <p>Smatphons</p>
-                    <p>SmartWatch</p>
-                    <p>Acessórios</p>
-
-                </div>
-
-
-                <div className={estiloLogin.institucional}>
-
-                    <h4>Institucional</h4>
-                    <p>CNPJ: XX.XXX.XXX/0001-XX</p>
-                    <p>Rua da Animésia 1148</p>
-                    <p>Política de privacidade</p>
-                    <p>Dúvidas frequentes</p>
-                    <p>Ajuda</p>
-                </div>
-
-
-
-
-            </section>
+                    <div className={estiloLogin.boxLinks}>
+                        <h4>Links Úteis</h4>
+                        <p>Inico</p>
+                        <p>Iohones</p>
+                        <p>Smatphons</p>
+                        <p>SmartWatch</p>
+                        <p>Acessórios</p>
+                    </div>
+                    <div className={estiloLogin.institucional}>
+                        <h4>Institucional</h4>
+                        <p>CNPJ: XX.XXX.XXX/0001-XX</p>
+                        <p>Rua da Animésia 1148</p>
+                        <p>Política de privacidade</p>
+                        <p>Dúvidas frequentes</p>
+                        <p>Ajuda</p>
+                    </div>
+                </section>
+           
 
 
 
