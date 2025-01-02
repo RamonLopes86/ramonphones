@@ -43,6 +43,13 @@
     font-size: 1.4rem;
     cursor: pointer;
     margin-top: 20px;
+    transition: all 200ms linear;
+}
+
+.forCadastro button:hover{
+
+    transform: translateY(-8px);
+    transition: all 200ms linear;
 }
 
 

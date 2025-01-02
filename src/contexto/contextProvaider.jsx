@@ -7,6 +7,7 @@ export default function ContextProvaider({children}){
 
     const [animaLogin , setAnimaLogin] = useState(true)
     const [animaCadastro,setAnimaCadastro] = useState(false)
+    const[corLogin , setCorLogin] = useState(undefined)
 
 
 
@@ -15,11 +16,13 @@ export default function ContextProvaider({children}){
        animaCadastro,
        animaLogin,
        setAnimaCadastro,
-       setAnimaLogin 
+       setAnimaLogin,
+       corLogin,
+       setCorLogin
     }
         
 
-    
+
 
 
     return(
