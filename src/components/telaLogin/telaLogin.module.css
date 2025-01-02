@@ -1,0 +1,156 @@
+.boxPai{
+
+    background-color:#030303;
+    min-height: 100vh;
+    font-family: var(--mon);
+    
+    
+}
+
+
+ 
+
+.boxLogin{
+
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 80px 40px;
+    
+}
+
+
+.boxFormulario{
+
+    outline: 1px solid #46effeb4;
+    box-shadow: 0px 0px 8px #46EEFE;
+    border-radius: 10px;
+    width: 500px;
+    min-height: 550px;
+    overflow: hidden;
+
+}
+
+
+.boxTx{
+
+    display: flex;
+    padding: 20px 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    text-transform: capitalize;
+}
+
+.boxFormulario h1{
+    
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    font-weight: 400;
+   
+    
+}
+
+
+.boxFormulario  h1::before{
+
+    content:' ';
+    display: block;
+    width: 0%;
+    transition: all 300ms linear;
+    border-bottom: 3px solid #46EEFE;
+    border-radius: 8px;
+    position: absolute;
+    bottom: -5px;
+
+}
+
+
+.boxFormulario  h1:hover::before{
+
+    content:' ';
+    display: block;
+    width: 100%;
+    transition: all 300ms linear;
+   
+}
+
+
+
+
+.fomulario{
+
+    
+    width: 100%;
+    position: relative;
+
+    
+}
+
+.formLogin{
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0px 20px;
+    position: absolute;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: all 200ms linear;
+    
+
+}
+
+.formLogin button {
+
+   
+    padding: 10px 0px;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    margin-top: 10px;
+    background-image: linear-gradient(to right , #25d7e7 30% , #6debf7);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 200ms linear;
+
+}
+
+
+.formLogin button:hover{
+
+    transform: translateY(-8px);
+    transition: all 200ms linear;
+}
+
+.formLogin p {
+
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    cursor: pointer;
+        
+   
+}
+
+
+.formLogin p:hover{
+
+    color: #25d7e7;
+    transition: all 200ms linear;
+}
+
+  
+
+
+
+
+

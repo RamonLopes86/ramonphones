@@ -1,0 +1,123 @@
+
+
+.formLogin{
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0px 40px;
+    position: absolute;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: all 200ms linear;
+    color: white;
+
+}
+
+
+
+.formLogin button {
+
+   
+    padding: 10px 0px;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    margin-top: 10px;
+    background-image: linear-gradient(to right , #25d7e7 30% , #6debf7);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 200ms linear;
+
+}
+
+
+.formLogin button:hover{
+
+    transform: translateY(-8px);
+    transition: all 200ms linear;
+}
+
+.formLogin p {
+
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    cursor: pointer;
+        
+   
+}
+
+
+.formLogin p:hover{
+
+    color: #25d7e7;
+    transition: all 200ms linear;
+}
+
+
+
+.boxInput{
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+.boxInput label{
+
+    color: white;
+
+}
+
+.boxInput > input{
+
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 13px 10px;
+
+
+}
+
+.boxCheck{
+
+    color:white;
+    display: flex;
+    padding: 20px 0px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+   
+}
+
+
+.animaLoginOn{
+
+    transform: translateX(0);
+    transition: all 400ms ease-out;
+    opacity: 1;
+
+}
+
+.animaLoginOff{
+
+    transform: translateX(-100%);
+    transition: all 400ms ease-out;
+    opacity: 0;
+
+}
+
+
+  
+
+
+
+
+
