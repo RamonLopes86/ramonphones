@@ -1,17 +1,19 @@
 .boxML{
 
     overflow-y: scroll;
-    height: 600px;
-    position: absolute;
+    position: fixed;
     top: 85px;
     width: 500px;
     right: 0;   
+    bottom: 0;
     background-color: var(--preta);
     border-radius: 0px 0px 10px 10px;
     border-left: 2px solid #86F5FF;
     border-bottom: 2px solid #86F5FF;
+    
 
 }
+
     
     
 
@@ -36,6 +38,7 @@
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+    
 
 }
 
@@ -88,4 +91,59 @@
 
     background-color: var(--azul);
 }
+
+
+
+.cardOn{
+
+transform: translate(0);
+transition: all 400ms ease-in-out;
+
+}
+
+.cardOff{
+
+    transform: translateX(100%);
+    transition: all 400ms ease-in-out;
+}
+
+
+.boxLoading{
+
+    text-align: center;
+    margin-top: 40px;
+}
+
+.msgCarrega{
+
+width: 100%;
+text-align: center;
+align-content: center;
+padding-bottom: 20px;
+text-transform: capitalize;
+
+
+}
+
+
+.iconCircle{
+
+    animation: moveCircle 1s linear infinite;
+    color: red;
+    width: 25px;
+    height: 25px;
+}
+
+
+@keyframes moveCircle {
+
+    to{
+
+        transform: rotate(360deg);
+        transition: all 1s linear;
+      
+    }
+
+}
+
 

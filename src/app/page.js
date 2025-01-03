@@ -21,7 +21,7 @@ export default function Home() {
     <ContextProvaider>
 
 
-      <div>
+      <div style={{overflow:'hidden'}}>
 
 
           <TelaLogin/>
