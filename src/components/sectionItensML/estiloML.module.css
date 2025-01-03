@@ -1,0 +1,91 @@
+.boxML{
+
+    overflow-y: scroll;
+    height: 600px;
+    position: absolute;
+    top: 85px;
+    width: 500px;
+    right: 0;   
+    background-color: var(--preta);
+    border-radius: 0px 0px 10px 10px;
+    border-left: 2px solid #86F5FF;
+    border-bottom: 2px solid #86F5FF;
+
+}
+    
+    
+
+.boxML::-webkit-scrollbar{
+
+    width: 5px;
+    background-color:black;
+    border-radius: 5px;
+}
+
+.boxML::-webkit-scrollbar-thumb{
+
+    background-color:var(--azul);
+    border-radius: 10px;
+    width: 2px;
+   
+}
+
+.cardMl{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+
+}
+
+.iconCar{
+
+    width: 30px;
+    height: fit-content;
+}
+
+.iconCar:hover{
+
+    cursor: pointer;
+    color: #05E5FA;
+}
+
+.card{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.conteudo{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.imgProd{
+
+    border-radius: 50%;
+}
+
+
+
+
+.boxInfo h4{
+
+   font-size: 0.8rem;
+    
+   margin-bottom: 5px;
+}
+
+
+.card:hover{
+
+    background-color: var(--azul);
+}
+

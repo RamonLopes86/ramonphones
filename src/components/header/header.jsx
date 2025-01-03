@@ -7,13 +7,22 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import ProdutosMl from '../sectionItensML/itensML';
+import hookcontext from '@/contexto/hookcontext';
+
 
 export default function Header(){
 
     const router = useRouter()
 
+    const {inputPesquisa , setInputPesquisa} = hookcontext()
+   
+
     const [navAnima , setNavAnima] = useState(false)
     const[setaAnima , setSetaAnima] = useState(false)
+
+
+    
 
 
     function mostrarNav(){
@@ -43,7 +52,7 @@ export default function Header(){
 
 
             <div className={estiloHeader.boxLogo}>
-                <Image className={estiloHeader.logo} src={logo}/>
+                <Image alt='image da logo' quality={100} className={estiloHeader.logo} src={logo}/>
 
                 <div onClick={mostrarNav} className={estiloHeader.boxProdutos}>
                     <span>Produtos</span>
@@ -67,7 +76,7 @@ export default function Header(){
             </div>
 
 
-            <input className={estiloHeader.inputEscondido} placeholder='pesquisar...' type="text" name="pesquisaEscondido" id="idpesquisaescondido" />
+            <input value={inputPesquisa} onChange={({target})=> setInputPesquisa(target.value)} className={estiloHeader.inputEscondido} placeholder='pesquisar...' type="text" name="pesquisaEscondido" id="idpesquisaescondido" />
 
 
             <div className={estiloHeader.boxBusca}>
@@ -82,10 +91,10 @@ export default function Header(){
               
 
                 <div className={estiloHeader.boxInput}>
-                    <input autoComplete='off' type="text" name="pesquisa" id="idpesquisa" placeholder='pesquisar...' />
+                    <input value={inputPesquisa} onChange={({target})=> setInputPesquisa(target.value)} autoComplete='off' type="text" name="pesquisa" id="idpesquisa" placeholder='pesquisar...' />
                     
                     <button onClick={logout} type='button'>logout</button>
-                    <p>ola , ramon lopes</p>
+                    <p>Ola , Ramon Lopes</p>
                 </div>
 
 
@@ -95,7 +104,7 @@ export default function Header(){
 
 
            
-
+             <ProdutosMl/>
        
 
 

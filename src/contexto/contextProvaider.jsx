@@ -8,7 +8,8 @@ export default function ContextProvaider({children}){
     const [animaLogin , setAnimaLogin] = useState(true)
     const [animaCadastro,setAnimaCadastro] = useState(false)
     const[corLogin , setCorLogin] = useState(undefined)
-
+    const[inputPesquisa , setInputPesquisa] = useState('')
+    const [arrayML , setArrayML] = useState([])
 
 
     const value = {
@@ -18,7 +19,11 @@ export default function ContextProvaider({children}){
        setAnimaCadastro,
        setAnimaLogin,
        corLogin,
-       setCorLogin
+       setCorLogin,
+       inputPesquisa,
+       setInputPesquisa,
+       arrayML,
+       setArrayML
     }
         
 
