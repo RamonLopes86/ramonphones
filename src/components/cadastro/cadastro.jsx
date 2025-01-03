@@ -1,10 +1,21 @@
+import { useEffect, useState } from 'react';
 import estiloSenha from './cadastro.module.css';
 import hookcontext from '@/contexto/hookcontext';
+
 
 export default function Senha() {
 
     const {animaCadastro} = hookcontext()
 
+    const [inputNome , setInputNome] = useState('')
+    const[inputMail , setInputMail] = useState('')
+    const [inputSenha , setInputSenha] = useState('')
+    const[inputRepSenha , setInputRepSenha] = useState('')
+
+    
+
+     
+ 
 
     return (
 
@@ -14,31 +25,32 @@ export default function Senha() {
             <div className={estiloSenha.boxInput}>
 
                 <label htmlFor="idnome">Nome</label>
-                <input autoComplete='off' type="text" name="nome" id="idnome" />
+                <input value={inputNome} onChange={({target})=> setInputNome(target.value)}  autoComplete='off' type="text" name="nome" id="idnome" />
 
             </div>
 
             <div className={estiloSenha.boxInput}>
 
                 <label htmlFor="idcadmail">E-mail</label>
-                <input autoComplete='off' type="text" name="mail" id="idcadmail" />
+                <input value={inputMail} onChange={({target})=> setInputMail(target.value)} autoComplete='off' type="text" name="mail" id="idcadmail" />
 
             </div>
             <div className={estiloSenha.boxInput}>
 
                 <label htmlFor="idcadsenha">Senha</label>
-                <input autoComplete='off' type="password" name="senha" id="idcadsenha" />
+                <input value={inputSenha} onChange={({target})=> setInputSenha(target.value)} autoComplete='off' type="password" name="senha" id="idcadsenha" />
 
             </div>
 
             <div className={estiloSenha.boxInput}>
 
                 <label htmlFor="idrepsenha">Repita Senha</label>
-                <input autoComplete='off' type="password" name="repSenha" id="idrepsenha" />
+                <input value={inputRepSenha} onChange={({target})=> setInputRepSenha(target.value)} autoComplete='off' type="password" name="repSenha" id="idrepsenha" />
 
             </div>
 
-            <button type='button'>Cadastrar</button>
+
+            <button  type='button'>Cadastrar</button>
 
            
 
