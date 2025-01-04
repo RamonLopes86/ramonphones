@@ -122,7 +122,7 @@ export default function ProdutosMl() {
                                         <Image className={estiloML.imgProd} alt={itens.title} width={100} height={100} quality={100} src={itens.thumbnail} />
     
                                         <div className={estiloML.boxInfo}>
-                                            <h4>{itens.title}</h4>
+                                            <h4>{itens.title.slice(0 , 30)}...</h4>
                                             <p>{dinheiro(itens.price , 'BRL')}</p>
                                         </div>
     

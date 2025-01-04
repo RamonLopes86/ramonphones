@@ -94,6 +94,7 @@ export default function Header(){
                     <input value={inputPesquisa} onChange={({target})=> setInputPesquisa(target.value)} autoComplete='off' type="text" name="pesquisa" id="idpesquisa" placeholder='pesquisar...' />
                     
                     <button onClick={logout} type='button'>logout</button>
+                    
                     <p>Ola , Ramon Lopes</p>
                 </div>
 
