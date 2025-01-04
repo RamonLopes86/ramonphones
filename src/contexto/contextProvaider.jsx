@@ -12,6 +12,7 @@ export default function ContextProvaider({children}){
     const [arrayML , setArrayML] = useState([])
     const [carrinho , setCarrinho] = useState([])
     const [modal , setModal] = useState(false)
+    const [mostrarCard , setMostrarCard] = useState(false)
 
 
 
@@ -32,7 +33,9 @@ export default function ContextProvaider({children}){
       addCarrinho,
       carrinho,
       setModal,
-      removeItemCarrinho
+      removeItemCarrinho,
+      mostrarCard,
+      setMostrarCard
     }
         
 

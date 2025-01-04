@@ -17,7 +17,7 @@ export default function Header(){
 
     const router = useRouter()
 
-    const {inputPesquisa , setInputPesquisa , setModal , carrinho} = hookcontext()
+    const {inputPesquisa , setInputPesquisa , setModal , carrinho , setMostrarCard} = hookcontext()
    
 
     const [navAnima , setNavAnima] = useState(false)
@@ -33,7 +33,16 @@ export default function Header(){
 
 
          setNavAnima(atual => !atual)
-         setSetaAnima(atual => !atual)
+        
+         
+
+    }
+
+
+    function mostrarModal(){
+
+        setModal(atual => !atual)
+        setMostrarCard(false)
 
     }
 
@@ -85,7 +94,7 @@ export default function Header(){
 
             <div className={estiloHeader.boxBusca}>
 
-                <div onClick={()=> setModal(atual => !atual)}  className={estiloHeader.boxCarrinho}>
+                <div onClick={mostrarModal}  className={estiloHeader.boxCarrinho}>
                     
                     <p className={estiloHeader.qtd}>{count}</p>
 

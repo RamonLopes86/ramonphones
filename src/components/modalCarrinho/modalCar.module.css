@@ -1,32 +1,40 @@
-
-
-
 .boxModal{
 
+    width: 500px;
+    height: 500px;
     position: absolute;
     top: 63px;
     z-index: 2;
-    background-color:gray;
-    width: 500px;
-    height: 500px;
     background-color: black;
     color: white;
     cursor: auto;
-    overflow: auto;
     box-shadow: 0px 0px 15px #86F5FF;
-    
    
+    
+}
+
+.boxFilhoModal{
+
+   
+    padding: 20px 0px;
+    width: 500px;
+    height:450px;
+    overflow: auto;
+    
+    
 }
     
+   
+    
 
 
-.boxModal::-webkit-scrollbar{
+.boxFilhoModal::-webkit-scrollbar{
 
     width: 3px;
     background-color: black;
 }
 
-.boxModal::-webkit-scrollbar-thumb{
+.boxFilhoModal::-webkit-scrollbar-thumb{
 
     background-color: #86F5FF;
     border-radius: 20px;
@@ -100,6 +108,37 @@
     height: 20px;
     color: red; 
     cursor: pointer;  
+}
+
+.boxMais{
+
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+
+.boxTotal{
+
+    
+    padding: 15px 5px;
+    text-align: right;
+}
+
+.boxMais > p:not(p:nth-of-type(2)){
+
+    width: 20px;
+    height:20px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
 }
 
 

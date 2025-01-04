@@ -7,13 +7,14 @@ import Image from 'next/image';
 import { FaCartPlus } from "react-icons/fa6";
 import dinheiro from '@/funcoes/funcoes';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { MdClose } from "react-icons/md";
 
 
 export default function ProdutosMl() {
 
-    const { inputPesquisa, arrayML, setArrayML , addCarrinho } = hookcontext()
+    const { inputPesquisa, arrayML, setArrayML , addCarrinho , mostrarCard , setMostrarCard } = hookcontext()
 
-    const [mostrarCard , setMostrarCard] = useState(false)
+ 
 
     const [loading , setLoading] = useState(true)
     const [msg , setMsg] = useState('')
@@ -106,7 +107,11 @@ export default function ProdutosMl() {
 
             <section className={`${estiloML.boxML} ${mostrarCard ? estiloML.cardOn : estiloML.cardOff}`}>
 
+                <div className={estiloML.boxIconClose}>
 
+                    <MdClose onClick={()=> setMostrarCard(false)} className={estiloML.iconClose}/>
+
+                </div>
 
             <div className={estiloML.cardMl}>
 
