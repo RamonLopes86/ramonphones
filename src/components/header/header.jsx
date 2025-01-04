@@ -9,6 +9,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ProdutosMl from '../sectionItensML/itensML';
 import hookcontext from '@/contexto/hookcontext';
+import ModalCarrinho from '../modalCarrinho/modalCarrinho';
+
 
 
 export default function Header(){
@@ -83,8 +85,12 @@ export default function Header(){
 
                 <div className={estiloHeader.boxCarrinho}>
                     
-                    <p>0</p>
+                    <p className={estiloHeader.qtd}>0</p>
+
                     <MdOutlineShoppingCart className={estiloHeader.iconCar}/>
+
+                    <ModalCarrinho/>
+
                 </div>
 
 

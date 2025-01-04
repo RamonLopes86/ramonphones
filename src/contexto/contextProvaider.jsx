@@ -10,6 +10,10 @@ export default function ContextProvaider({children}){
     const[corLogin , setCorLogin] = useState(undefined)
     const[inputPesquisa , setInputPesquisa] = useState('')
     const [arrayML , setArrayML] = useState([])
+    const [carrinho , setCarrinho] = useState([])
+    const [modal , setModal] = useState(false)
+
+
 
 
     const value = {
@@ -23,11 +27,96 @@ export default function ContextProvaider({children}){
        inputPesquisa,
        setInputPesquisa,
        arrayML,
-       setArrayML
+       setArrayML,
+      modal,
+      addCarrinho,
+      carrinho
     }
         
 
 
+  
+
+    function addCarrinho(itemCarrinhoInical){
+
+
+     
+
+   
+      setCarrinho((carrinho)=>{
+
+
+            const itemCarrinho = carrinho.find((produtos)=> produtos.id === itemCarrinhoInical.id)
+
+            if(itemCarrinho){
+
+               return(
+
+                  carrinho.map((produtos)=>{
+
+                     if(produtos.id === itemCarrinhoInical.id){
+
+
+                        return{
+
+                              ...produtos,
+                              count:produtos.count + 1
+                        }
+                     }
+
+
+                     return produtos;
+
+                  })
+
+
+               )
+
+
+            }else{
+
+                  if(itemCarrinhoInical.count === 0){
+
+                     return [
+
+                        ...carrinho,
+                        {...itemCarrinhoInical , count:1}
+
+                     ]
+
+                  }else{
+
+
+                     return[...carrinho]
+                  }
+
+
+
+            }
+         
+      })
+
+
+
+
+
+   }
+
+
+
+            
+            
+
+
+      
+
+
+        
+
+
+
+
+    
 
 
     return(

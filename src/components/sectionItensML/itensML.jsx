@@ -11,8 +11,10 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export default function ProdutosMl() {
 
-    const { inputPesquisa, arrayML, setArrayML } = hookcontext()
+    const { inputPesquisa, arrayML, setArrayML , addCarrinho } = hookcontext()
+
     const [mostrarCard , setMostrarCard] = useState(false)
+
     const [loading , setLoading] = useState(true)
     const [msg , setMsg] = useState('')
     const [mostraCircle , setMostrarCircle] = useState(false)
@@ -22,9 +24,18 @@ export default function ProdutosMl() {
     async function exibirProdutosMl() {
 
 
+        const limite = {
+
+            params:{
+
+                limit:10
+            }
+        }
+
+
         try {
 
-        const response = await axios.get(`https://api.mercadolibre.com/sites/MLB/search?q=${inputPesquisa}`)
+        const response = await axios.get(`https://api.mercadolibre.com/sites/MLB/search?q=${inputPesquisa}` , limite)
 
         const { results } = response.data
 
@@ -39,8 +50,10 @@ export default function ProdutosMl() {
 
         }
             
-
-        setArrayML(results)
+        const ArrayCount = results.map((it)=>{ return {...it , count:0}})
+       
+        
+        setArrayML(ArrayCount)
         setLoading(false)
 
         return;
@@ -110,7 +123,7 @@ export default function ProdutosMl() {
 
                         arrayML.map((itens) => {
 
-                        
+                          
 
                             return (
     
@@ -129,7 +142,7 @@ export default function ProdutosMl() {
                                     </div>
     
     
-                                    <FaCartPlus className={estiloML.iconCar} />
+                                    <FaCartPlus onClick={()=> addCarrinho(itens)} className={estiloML.iconCar} />
                                     
                                 </div>
     
