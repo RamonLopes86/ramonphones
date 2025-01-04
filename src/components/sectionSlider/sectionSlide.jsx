@@ -84,7 +84,7 @@ export default function Slide() {
                                             <p><span>{dinheiro(itens.preco, "BRL")}</span> à vista</p>
                                             <p>ou em ate 12x de {dinheiro((itens.antigo) / 12, "BRL")}</p>
                                             <button type='button'>
-                                                Adicionar ao carrinho
+                                                <span>Adicionar ao carrinho</span>
                                                 <FaCartPlus className={estiloSlode.iconCar} />
                                             </button>
                                         </div>
@@ -113,7 +113,7 @@ export default function Slide() {
 
                 </Swiper>
 
-                    
+
                     <p ref={prevRef}><FaLongArrowAltLeft className={estiloSlode.iconSeta} /></p>
                     <p ref={nextRef}><FaLongArrowAltRight className={estiloSlode.iconSeta} /></p>
                    

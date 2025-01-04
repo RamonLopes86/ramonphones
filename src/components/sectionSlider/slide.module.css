@@ -17,6 +17,7 @@
   position: relative;
 
 
+
    
 }
 
@@ -111,11 +112,17 @@
 .sliders > P {
 
     position: absolute;
-    top: 40px;
-    right: -100px;
+    top: 0px;
+    right: 0px;
     cursor: pointer;
 
     
+}
+
+
+.sliders > p:nth-of-type(1){
+
+    right: 50px;
 }
 
 
@@ -124,8 +131,8 @@
 
     width: 30px;
     height:fit-content;
-    
     transition: all 500ms ease-in-out;
+    
 }
 
 .sliders > P:hover > .iconSeta{
@@ -134,10 +141,6 @@
     transition: all 500ms ease-in-out;
 }
 
-.sliders > p:nth-of-type(1){
-
-    right: -50px;
-}
 
 
 @keyframes moveButton {
@@ -146,6 +149,77 @@
             transform: scale(1.05);
             transition: all 1s linear;
         }
+}
+
+
+
+@media screen and (max-width:930px) {
+
+    .slideTx{
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .slideTx h1 {
+
+        min-width: 100%;
+        text-align: center;
+       
+    }
+
+    .slideTx button{
+
+        width: 50%;
+        text-align: center;
+        margin: 30px auto;
+
+    }
+    
+    .card{
+
+        flex-direction: column;
+    }
+
+}
+
+
+
+@media screen and (max-width:500px) {
+
+    .boxImage{
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .image{
+
+        width: 90%;
+        height: fit-content;
+    }
+
+
+    .slideTx button{
+
+        padding: 0px 20px;
+        font-size: 0.9rem;
+    }
+
+}
+
+
+@media screen and (max-width:400px) {
+
+    .slideTx button > span{
+
+        display: none;
+    }
+
 }
 
 
