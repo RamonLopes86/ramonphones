@@ -4,19 +4,23 @@ import estiloModalCar from './modalCar.module.css';
 import Image from 'next/image';
 import { FaRegTrashAlt } from "react-icons/fa";
 import dinheiro from '@/funcoes/funcoes';
+import { useEffect, useState } from 'react';
+
 
 
 
 
 export default function ModalCarrinho(){
 
-    const {modal , carrinho , removeItemCarrinho} = hookcontext()
+    const {modal , carrinho , removeItemCarrinho , incrementarItem} = hookcontext()
 
     const total = carrinho.reduce((acc , item)=> acc + item.price * item.count , 0)
 
+  
 
-   
-   
+
+
+  
 
     
     return(
@@ -40,8 +44,10 @@ export default function ModalCarrinho(){
                             
 
                                 carrinho.map((itens)=>{
-        
-                                   
+
+
+                               
+                                    
         
                                     return(
         
@@ -51,15 +57,17 @@ export default function ModalCarrinho(){
                                                 <div className={estiloModalCar.boxInfo}>
                                                     <Image alt={itens.title} className={estiloModalCar.imageProduto} width={100} height={100} quality={100} src={itens.thumbnail}/>
                                                     <div className={estiloModalCar.boxTx}>
-                                                    <p>{itens.title.slice(0 ,30)}...</p>
+                                                    <p>{itens.title.slice(0 ,50)}...</p>
                                                     <p>{dinheiro(itens.price , "BRL")}</p>
                                                     </div>
                                                 </div>
 
-                                                <div className={estiloModalCar.boxMais}>
-                                                <p onClick={()=> itens.count+=1}>+</p>
-                                                    <p>{itens.count}</p>
-                                                    <p onClick={()=> itens.count-=1}>-</p>
+                                                <div className={estiloModalCar.boxFlexMais}>
+                                                    <div className={estiloModalCar.boxMais}>
+                                                        <p onClick={()=>incrementarItem(itens.id , 's')} >+</p>
+                                                        <p>{itens.count}</p>
+                                                        <p onClick={()=> incrementarItem(itens.id , 'd')}>-</p>
+                                                    </div>
                                                 </div>
 
                                                 <FaRegTrashAlt onClick={()=>removeItemCarrinho(itens.id)} className={estiloModalCar.iconTrash}/>

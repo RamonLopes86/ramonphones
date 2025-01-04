@@ -19,7 +19,7 @@
     padding: 20px 0px;
     width: 500px;
     height:450px;
-    overflow: auto;
+    overflow-y: scroll;
     
     
 }
@@ -60,7 +60,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 10px;
+    padding: 10px;
+   
 }
 
 
@@ -89,6 +90,8 @@
     gap: 10px;
 }
 
+
+
 .boxTx > p {
 
     padding: 2px;
@@ -108,6 +111,17 @@
     height: 20px;
     color: red; 
     cursor: pointer;  
+    flex: none;
+}
+
+.boxFlexMais{
+
+    
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .boxMais{
@@ -116,6 +130,10 @@
     flex-direction: row;
     gap: 5px;
     align-items: center;
+    
+    outline: 1px solid #86F5FF;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 
@@ -130,7 +148,7 @@
 
     width: 20px;
     height:20px;
-    color: black;
+    color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -138,7 +156,110 @@
     cursor:pointer;
     padding: 5px;
     border-radius: 5px;
-    background-color: white;
+    border: 1px solid #86F5FF;
+}
+
+
+@media screen and (max-width:970px) {
+
+    .boxModal{
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        width: 100%;
+        
+    }
+
+    .boxFilhoModal{
+
+        width: 100%;
+    }
+
+
+        .boxMais{
+
+            width: 100px;
+            justify-content: space-between;
+            
+        }
+    
+
+    .boxCard{
+
+           
+        justify-content: space-between;
+        padding: 0px 20px;
+        gap: 20px;
+
+    }
+
+
+    
+
+    
+
+}
+
+
+
+@media screen and (max-width:410px) {
+
+
+     .boxCard{
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 50px;
+        
+        } 
+        
+     
+     
+     .iconTrash{
+
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+
+     }
+
+
+     .boxFlexMais{
+
+        width: 100%;
+     }
+
+     .boxMais{
+
+        width: 60%;
+        padding: 5px;
+        display: flex;
+       
+     }
+
+     .boxMais > p {
+
+        min-width: 35px;
+        min-height: 35px;
+        font-size: 2rem; 
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+     }
+
+
 }
 
 

@@ -35,7 +35,8 @@ export default function ContextProvaider({children}){
       setModal,
       removeItemCarrinho,
       mostrarCard,
-      setMostrarCard
+      setMostrarCard,
+      incrementarItem
     }
         
 
@@ -121,6 +122,35 @@ export default function ContextProvaider({children}){
 
       
 
+   function incrementarItem(id , acao){
+
+         setCarrinho((carrinho)=>{
+
+            return(
+
+               carrinho.map((item)=>{
+
+                  if(item.id === id){
+
+                     const attCount = acao === 's' ? item.count + 1 : item.count === 0 ? 0 : item.count - 1
+
+                     return {...item , count:attCount}
+
+                  }
+
+
+                  return item
+
+               })
+
+
+            )
+
+
+         })
+
+
+   }
 
         
 
