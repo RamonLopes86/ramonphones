@@ -10,13 +10,13 @@ import dinheiro from '@/funcoes/funcoes';
 
 export default function ModalCarrinho(){
 
-    const {modal , carrinho} = hookcontext()
+    const {modal , carrinho , removeItemCarrinho} = hookcontext()
 
 
     
     return(
 
-        <section style={modal ? {display:'block'}: {display:'block'}}  className={estiloModalCar.boxModal}>
+        <section style={modal ? {transition:'all 200ms linear', transform:'translate(0)', opacity:'1', visibility:'visible'}: {transition:'all 200ms linear', transform:'translateY(100px)', opacity:'0' , visibility:'hidden' }}  className={estiloModalCar.boxModal}>
               
 
                 <div>
@@ -41,7 +41,7 @@ export default function ModalCarrinho(){
         
                                         <div className={estiloModalCar.boxCard} key={itens.id}>
                                             <div className={estiloModalCar.boxInfo}>
-                                                <Image className={estiloModalCar.imageProduto} width={100} height={100} quality={100} src={itens.thumbnail}/>
+                                                <Image alt={itens.title} className={estiloModalCar.imageProduto} width={100} height={100} quality={100} src={itens.thumbnail}/>
 
                                                 <div className={estiloModalCar.boxTx}>
                                                 <p>{itens.title.slice(0 ,30)}...</p>
@@ -51,7 +51,7 @@ export default function ModalCarrinho(){
                                             </div>
 
 
-                                            <FaRegTrashAlt className={estiloModalCar.iconTrash}/>
+                                            <FaRegTrashAlt onClick={()=>removeItemCarrinho(itens.id)} className={estiloModalCar.iconTrash}/>
         
                                         </div>
         

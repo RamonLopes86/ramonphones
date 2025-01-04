@@ -5,7 +5,7 @@ import Image from 'next/image';
 import logo from '../../../public/logo.png'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ProdutosMl from '../sectionItensML/itensML';
 import hookcontext from '@/contexto/hookcontext';
@@ -17,11 +17,13 @@ export default function Header(){
 
     const router = useRouter()
 
-    const {inputPesquisa , setInputPesquisa} = hookcontext()
+    const {inputPesquisa , setInputPesquisa , setModal , carrinho} = hookcontext()
    
 
     const [navAnima , setNavAnima] = useState(false)
     const[setaAnima , setSetaAnima] = useState(false)
+
+    const count = carrinho.reduce((acc , item)=> acc + item.count , 0)
 
 
     
@@ -83,17 +85,17 @@ export default function Header(){
 
             <div className={estiloHeader.boxBusca}>
 
-                <div className={estiloHeader.boxCarrinho}>
+                <div onClick={()=> setModal(atual => !atual)}  className={estiloHeader.boxCarrinho}>
                     
-                    <p className={estiloHeader.qtd}>0</p>
+                    <p className={estiloHeader.qtd}>{count}</p>
 
                     <MdOutlineShoppingCart className={estiloHeader.iconCar}/>
 
-                    <ModalCarrinho/>
-
                 </div>
+                   
 
 
+                <ModalCarrinho/>
               
 
                 <div className={estiloHeader.boxInput}>

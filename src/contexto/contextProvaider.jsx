@@ -30,7 +30,9 @@ export default function ContextProvaider({children}){
        setArrayML,
       modal,
       addCarrinho,
-      carrinho
+      carrinho,
+      setModal,
+      removeItemCarrinho
     }
         
 
@@ -78,16 +80,14 @@ export default function ContextProvaider({children}){
                   if(itemCarrinhoInical.count === 0){
 
                      return [
-
                         ...carrinho,
                         {...itemCarrinhoInical , count:1}
-
                      ]
 
                   }else{
 
 
-                     return[...carrinho]
+                    return[...carrinho]
                   }
 
 
@@ -106,7 +106,15 @@ export default function ContextProvaider({children}){
 
             
             
+   function removeItemCarrinho(id){
 
+
+      const filtrado = carrinho.filter((item)=> item.id !== id)
+
+
+        setCarrinho(filtrado)
+
+   }
 
       
 
