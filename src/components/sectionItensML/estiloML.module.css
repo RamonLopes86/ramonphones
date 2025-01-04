@@ -10,9 +10,11 @@
     border-radius: 0px 0px 10px 10px;
     border-left: 2px solid #86F5FF;
     border-bottom: 2px solid #86F5FF;
+    z-index: 2;
+    
+}
     
 
-}
 
     
     

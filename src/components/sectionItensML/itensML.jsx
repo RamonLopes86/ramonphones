@@ -130,6 +130,7 @@ export default function ProdutosMl() {
     
     
                                     <FaCartPlus className={estiloML.iconCar} />
+                                    
                                 </div>
     
                             )

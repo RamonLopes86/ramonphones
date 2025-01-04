@@ -1,0 +1,158 @@
+.boxPaiSlide{
+
+    background-color: black;
+    width: 100%;
+  
+}
+
+.sliders{
+
+   background-color: var(--preta);
+   font-family: var(--mon);
+   color: white;
+  background-color: black;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding-top: 40px;
+  position: relative;
+
+
+   
+}
+
+.card{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.slideTx p:nth-of-type(1){
+
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    
+}
+
+
+
+.slideTx > h1{
+
+    font-size: 3rem;
+    max-width: 450px;
+    padding: 20px 0px;
+   
+}
+
+.slideTx > p {
+
+    padding: 8px 0px;
+}
+
+
+.slideTx > p:nth-of-type(2) > span{
+
+    text-decoration: line-through;
+    
+}
+
+.slideTx > p:nth-of-type(3) > span{
+
+
+    font-size: 2rem;
+    color: rgba(0, 128, 0, 0.849);
+    
+}
+
+.slideTx button {
+
+    display: block;
+    margin-top: 20px;
+    width: 250px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    background:transparent;
+    outline: 2px solid #05E5FA;
+    color: white;
+    box-shadow: 0px 0px 15px #05E5FA;
+    cursor: pointer;
+
+    animation: moveButton 1s linear infinite alternate;
+   
+}
+
+
+.slideTx button:hover > .iconCar{
+
+    color: #05E5FA;
+    transition: all 500ms ease-in-out;
+
+   
+}
+
+
+.iconCar{
+
+    width: 35px;
+    height: fit-content;
+    display: block;
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+
+
+.sliders > P {
+
+    position: absolute;
+    top: 40px;
+    right: -100px;
+    cursor: pointer;
+
+    
+}
+
+
+
+.iconSeta{
+
+    width: 30px;
+    height:fit-content;
+    
+    transition: all 500ms ease-in-out;
+}
+
+.sliders > P:hover > .iconSeta{
+
+    color: #05E5FA;
+    transition: all 500ms ease-in-out;
+}
+
+.sliders > p:nth-of-type(1){
+
+    right: -50px;
+}
+
+
+@keyframes moveButton {
+
+        to{
+            transform: scale(1.05);
+            transition: all 1s linear;
+        }
+}
+
+
+
+
+
+
+
+
+

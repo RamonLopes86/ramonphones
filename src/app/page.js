@@ -11,6 +11,7 @@ import TelaLogin from "@/components/telaLogin/telaLogin";
 
 
 
+
 export default function Home() {
 
 
@@ -25,6 +26,7 @@ export default function Home() {
 
 
           <TelaLogin/>
+          
 
     
       </div>

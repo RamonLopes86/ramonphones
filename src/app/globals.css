@@ -20,3 +20,36 @@
 
 }
 
+
+.swiper-button-next{
+
+  display: none !important;
+   
+}
+
+.swiper-button-prev{
+
+  display: none !important;
+   
+}
+
+.swiper-pagination-bullet{
+
+  background-color: rgb(255, 255, 255) !important;
+  width: 13px !important;
+  height: 13px !important;
+
+    
+}
+
+.swiper-pagination-bullet-active{
+
+    background-color: var(--azul) !important ;
+}
+
+
+
+
+
+
+
