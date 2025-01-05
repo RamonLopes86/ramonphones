@@ -103,14 +103,16 @@ export default function SectionPhones() {
 
                     slidesPerGroup:4,
                     slidesPerView:4,
-                    simulateTouch:false
+                    simulateTouch:false,
+                    grabCursor:false
                 },
 
                 1000:{
                     
                     slidesPerView:3,
                     slidesPerGroup:4,
-                    simulateTouch:false
+                    simulateTouch:false,
+                    grabCursor:false
 
                 },
 
@@ -118,7 +120,8 @@ export default function SectionPhones() {
                     
                     slidesPerView:2,
                     slidesPerGroup:2,
-                    simulateTouch:true
+                    simulateTouch:true,
+                    grabCursor:true
 
                 },
 
@@ -126,7 +129,8 @@ export default function SectionPhones() {
                     
                     slidesPerView:1,
                     slidesPerGroup:1,
-                    simulateTouch:true
+                    simulateTouch:true,
+                    grabCursor:true
 
                 },
                 
@@ -135,6 +139,7 @@ export default function SectionPhones() {
 
               }}
                 
+             
                 
                 >
 
