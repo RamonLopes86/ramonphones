@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import celdados from '@/dadosSlideCel/dados';
 import dinheiro from '@/funcoes/funcoes';
+import hookcontext from '@/contexto/hookcontext';
 
 
 
@@ -19,6 +20,9 @@ import dinheiro from '@/funcoes/funcoes';
 
 
 export default function Slide() {
+
+
+    const {clickModalOut} = hookcontext()
 
 
     const prevRef = useRef(null)
@@ -41,7 +45,7 @@ export default function Slide() {
 
     return (
 
-        <section className={estiloSlode.boxPaiSlide}>
+        <section onClick={clickModalOut} className={estiloSlode.boxPaiSlide}>
 
             <section className={estiloSlode.sliders}>
                 <Swiper

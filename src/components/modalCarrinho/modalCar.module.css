@@ -3,12 +3,13 @@
     width: 500px;
     height: 500px;
     position: absolute;
-    top: 63px;
+    top: 72px;
     z-index: 2;
     background-color: black;
     color: white;
     cursor: auto;
     box-shadow: 0px 0px 15px #86F5FF;
+    
    
     
 }
@@ -18,13 +19,30 @@
    
     padding: 20px 0px;
     width: 500px;
-    height:450px;
+    height:420px;
     overflow-y: scroll;
+    margin-top: 40px;
     
     
 }
     
-   
+
+.iconX{
+
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    cursor: pointer;
+    
+}
+
+.iconX:hover{
+
+    color: red;
+}
     
 
 
@@ -61,6 +79,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    
    
 }
 

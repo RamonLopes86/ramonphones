@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FaRegTrashAlt } from "react-icons/fa";
 import dinheiro from '@/funcoes/funcoes';
 import { useEffect, useState } from 'react';
+import { FaX } from 'react-icons/fa6';
 
 
 
@@ -12,7 +13,7 @@ import { useEffect, useState } from 'react';
 
 export default function ModalCarrinho(){
 
-    const {modal , carrinho , removeItemCarrinho , incrementarItem} = hookcontext()
+    const {modal , carrinho , removeItemCarrinho , incrementarItem , setModal , refModalCar} = hookcontext()
 
     const total = carrinho.reduce((acc , item)=> acc + item.price * item.count , 0)
 
@@ -25,10 +26,12 @@ export default function ModalCarrinho(){
     
     return(
 
-        <section style={modal ? {transition:'all 200ms linear', transform:'translate(0)', opacity:'1', visibility:'visible'}: {transition:'all 200ms linear', transform:'translateY(100px)', opacity:'0' , visibility:'hidden' }}  className={estiloModalCar.boxModal}>
+        <section ref={refModalCar} style={modal ? {transition:'all 200ms linear', transform:'translate(0)', opacity:'1', visibility:'visible'}: {transition:'all 200ms linear', transform:'translateY(100px)', opacity:'0' , visibility:'hidden' }}  className={estiloModalCar.boxModal}>
               
 
                 <div className={estiloModalCar.boxFilhoModal}>
+
+                    <FaX onClick={()=> setModal(false)} className={estiloModalCar.iconX}/>
 
                     {
                         carrinho.length === 0 ? (
@@ -54,6 +57,10 @@ export default function ModalCarrinho(){
                                         
                                             
                                             <div className={estiloModalCar.boxCard} key={itens.id}>
+
+
+
+
                                                 <div className={estiloModalCar.boxInfo}>
                                                     <Image alt={itens.title} className={estiloModalCar.imageProduto} width={100} height={100} quality={100} src={itens.thumbnail}/>
                                                     <div className={estiloModalCar.boxTx}>

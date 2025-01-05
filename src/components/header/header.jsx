@@ -17,7 +17,7 @@ export default function Header(){
 
     const router = useRouter()
 
-    const {inputPesquisa , setInputPesquisa , setModal , carrinho , setMostrarCard} = hookcontext()
+    const {inputPesquisa , setInputPesquisa , setModal , carrinho , setMostrarCard , clickModalOut} = hookcontext()
    
 
     const [navAnima , setNavAnima] = useState(false)
@@ -33,15 +33,18 @@ export default function Header(){
 
 
          setNavAnima(atual => !atual)
-        
+         setSetaAnima(atual=>!atual)
          
 
     }
 
 
-    function mostrarModal(){
+    function mostrarModal(ev){
+
+        ev.stopPropagation()
 
         setModal(atual => !atual)
+        
         setMostrarCard(false)
 
     }
@@ -61,7 +64,7 @@ export default function Header(){
 
     return(
 
-        <section className={estiloHeader.boxHeader}>
+        <section onClick={clickModalOut} className={estiloHeader.boxHeader}>
 
 
             <div className={estiloHeader.boxLogo}>
@@ -69,7 +72,7 @@ export default function Header(){
 
                 <div onClick={mostrarNav} className={estiloHeader.boxProdutos}>
                     <span>Produtos</span>
-                    <IoIosArrowDown style={setaAnima ? {transform:'rotate(180deg)', transition:'all 300ms linear'} : {transform:'rotate(0)' , transition:'all 300ms linear'}} className={estiloHeader.iconSeta}/>
+                    <IoIosArrowDown style={setaAnima ? {transform:'rotate(180deg)', transition:'all 100ms linear'} : {transform:'rotate(0)' , transition:'all 100ms linear'}} className={estiloHeader.iconSeta}/>
 
                     <div className={estiloHeader.menuNav}>
 
@@ -96,7 +99,7 @@ export default function Header(){
 
                 <div onClick={mostrarModal}  className={estiloHeader.boxCarrinho}>
                     
-                    <p className={estiloHeader.qtd}>{count}</p>
+                    <p style={carrinho.length === 0 ? {display:'none'} : {display:'block'}} className={estiloHeader.qtd}>{count}</p>
 
                     <MdOutlineShoppingCart className={estiloHeader.iconCar}/>
 

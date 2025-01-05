@@ -1,6 +1,6 @@
 'use client'
 import { context } from "./context"
-import React , {useState , useEffect} from "react"
+import React , {useState , useEffect , useRef} from "react"
 
 export default function ContextProvaider({children}){
 
@@ -15,7 +15,8 @@ export default function ContextProvaider({children}){
     const [mostrarCard , setMostrarCard] = useState(false)
 
 
-
+    const boxRef = useRef(null)
+    const refModalCar = useRef(null)
 
     const value = {
 
@@ -36,7 +37,11 @@ export default function ContextProvaider({children}){
       removeItemCarrinho,
       mostrarCard,
       setMostrarCard,
-      incrementarItem
+      incrementarItem,
+      boxRef,
+      refModalCar,
+      clickModalOut
+     
     }
         
 
@@ -132,7 +137,7 @@ export default function ContextProvaider({children}){
 
                   if(item.id === id){
 
-                     const attCount = acao === 's' ? item.count + 1 : item.count === 0 ? 0 : item.count - 1
+                     const attCount = acao === 's' ? item.count + 1 : item.count <= 0 ? 0  : item.count - 1
 
                      return {...item , count:attCount}
 
@@ -141,7 +146,7 @@ export default function ContextProvaider({children}){
 
                   return item
 
-               })
+               }).filter((item)=> item.count !== 0)
 
 
             )
@@ -154,10 +159,40 @@ export default function ContextProvaider({children}){
 
         
 
+   useEffect(()=>{
+
+      const clickModalProdutos = ({target}) =>{
+
+         
+         if(boxRef.current && !boxRef.current.contains(target)){
+
+               setMostrarCard(false)
+        }
 
 
+      }
 
-    
+
+       document.addEventListener('click' , clickModalProdutos)
+
+
+       return ()=>{
+
+         document.removeEventListener('click' , clickModalProdutos)
+       }
+
+   },[])
+      
+
+   function clickModalOut({target}){
+
+      if(refModalCar.current && !refModalCar.current.contains(target)){
+
+         setModal(false)
+      }
+
+   } 
+
 
 
     return(

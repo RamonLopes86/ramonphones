@@ -12,13 +12,21 @@ import { MdClose } from "react-icons/md";
 
 export default function ProdutosMl() {
 
-    const { inputPesquisa, arrayML, setArrayML , addCarrinho , mostrarCard , setMostrarCard } = hookcontext()
+    const { inputPesquisa, arrayML, setArrayML, addCarrinho, mostrarCard, setMostrarCard, setInputPesquisa , boxRef } = hookcontext()
+
+
+
+    const [loading, setLoading] = useState(true)
+    const [msg, setMsg] = useState('')
+    const [mostraCircle, setMostrarCircle] = useState(false)
+
+   
+
+
+
 
  
 
-    const [loading , setLoading] = useState(true)
-    const [msg , setMsg] = useState('')
-    const [mostraCircle , setMostrarCircle] = useState(false)
 
 
 
@@ -27,37 +35,40 @@ export default function ProdutosMl() {
 
         const limite = {
 
-            params:{
+            params: {
 
-                limit:10
+                limit: 10
             }
         }
 
 
         try {
 
-        const response = await axios.get(`https://api.mercadolibre.com/sites/MLB/search?q=${inputPesquisa}` , limite)
+            const response = await axios.get(`https://api.mercadolibre.com/sites/MLB/search?q=${inputPesquisa}`, limite)
 
-        const { results } = response.data
 
-        if(results.length === 0){
 
-            setLoading(true)
-            
-            setMsg('nenhum iten encontrado :(')
-            setMostrarCircle(false)
+            const { results } = response.data
+
+            if (results.length === 0) {
+
+                setLoading(true)
+
+                setMsg('nenhum iten encontrado :(')
+                setMostrarCircle(false)
+
+                return;
+
+            }
+
+            const ArrayCount = results.map((it) => { return { ...it, count: 0 } })
+
+
+            setArrayML(ArrayCount)
+
+            setLoading(false)
 
             return;
-
-        }
-            
-        const ArrayCount = results.map((it)=>{ return {...it , count:0}})
-       
-        
-        setArrayML(ArrayCount)
-        setLoading(false)
-
-        return;
 
         } catch (error) {
 
@@ -72,24 +83,26 @@ export default function ProdutosMl() {
 
     useEffect(() => {
 
-        if(inputPesquisa && inputPesquisa.length > 1 && /^(?!\s*$).+/.test(inputPesquisa) && inputPesquisa !== " " ){
+        if (inputPesquisa && inputPesquisa.length > 1 && /^(?!\s*$).+/.test(inputPesquisa) && inputPesquisa !== " ") {
 
             setMostrarCard(true)
 
-        }else{
+        } else {
 
             setMostrarCard(false)
-           
-            
+
+
+
+
         }
 
-        setLoading(true) 
+        setLoading(true)
         setMsg('carregando itens...')
         setMostrarCircle(true)
-        
-        const timeout = setTimeout(()=>{exibirProdutosMl()},1400)
 
-        return ()=>{
+        const timeout = setTimeout(() => { exibirProdutosMl() }, 1400)
+
+        return () => {
 
             clearTimeout(timeout)
 
@@ -103,62 +116,62 @@ export default function ProdutosMl() {
 
     return (
 
-    
 
-            <section className={`${estiloML.boxML} ${mostrarCard ? estiloML.cardOn : estiloML.cardOff}`}>
 
-                <div className={estiloML.boxIconClose}>
+        <section ref={boxRef} className={`${estiloML.boxML} ${mostrarCard ? estiloML.cardOn : estiloML.cardOff}`}>
 
-                    <MdClose onClick={()=> setMostrarCard(false)} className={estiloML.iconClose}/>
+            <div className={estiloML.boxIconClose}>
 
-                </div>
+                <MdClose onClick={() => { setMostrarCard(false); setInputPesquisa('') }} className={estiloML.iconClose} />
+
+            </div>
 
             <div className={estiloML.cardMl}>
 
                 {
-                    
+
                     loading ? (
 
-                        <div  style={inputPesquisa.length === 0 ? {display:'none'} : {display:'block'} }  className={estiloML.boxLoading}>
+                        <div style={inputPesquisa.length === 0 ? { display: 'none' } : { display: 'block' }} className={estiloML.boxLoading}>
                             <h1 className={estiloML.msgCarrega}>{msg}</h1>
-                            <AiOutlineLoading3Quarters style={mostraCircle ? {opacity:'1'} : {opacity:'0'}} className={estiloML.iconCircle} />
+                            <AiOutlineLoading3Quarters style={mostraCircle ? { opacity: '1' } : { opacity: '0' }} className={estiloML.iconCircle} />
                         </div>
 
-                    ):(
+                    ) : (
 
                         arrayML.map((itens) => {
 
-                          
+
 
                             return (
-    
+
                                 <div key={itens.id} className={estiloML.card}>
-    
-    
+
+
                                     <div className={estiloML.conteudo}>
-    
+
                                         <Image className={estiloML.imgProd} alt={itens.title} width={100} height={100} quality={100} src={itens.thumbnail} />
-    
+
                                         <div className={estiloML.boxInfo}>
-                                            <h4>{itens.title.slice(0 , 30)}...</h4>
-                                            <p>{dinheiro(itens.price , 'BRL')}</p>
+                                            <h4>{itens.title.slice(0, 30)}...</h4>
+                                            <p>{dinheiro(itens.price, 'BRL')}</p>
                                         </div>
-    
+
                                     </div>
-    
-    
-                                    <FaCartPlus onClick={()=> addCarrinho(itens)} className={estiloML.iconCar} />
-                                    
+
+
+                                    <FaCartPlus onClick={() => addCarrinho(itens)} className={estiloML.iconCar} />
+
                                 </div>
-    
+
                             )
-    
-    
+
+
                         })
 
                     )
 
-                  
+
 
 
                 }
@@ -168,11 +181,11 @@ export default function ProdutosMl() {
 
         </section>
 
-           
 
-    
 
-   
+
+
+
 
 
     )
