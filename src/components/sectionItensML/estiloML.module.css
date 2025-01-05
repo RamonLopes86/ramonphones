@@ -75,12 +75,14 @@
 
     width: 30px;
     height: fit-content;
+    
 }
 
 .iconCar:hover{
 
     cursor: pointer;
     color: #05E5FA;
+    
 }
 
 .card{
@@ -91,9 +93,11 @@
     padding: 5px 10px;
     border-radius: 8px;
     width: 100%;
+       
+}
+
 
    
-}
 
 .conteudo{
 

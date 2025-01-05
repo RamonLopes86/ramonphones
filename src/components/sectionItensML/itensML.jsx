@@ -12,7 +12,7 @@ import { MdClose } from "react-icons/md";
 
 export default function ProdutosMl() {
 
-    const { inputPesquisa, arrayML, setArrayML, addCarrinho, mostrarCard, setMostrarCard, setInputPesquisa , boxRef } = hookcontext()
+    const { inputPesquisa, arrayML, setArrayML, addCarrinho, mostrarCard, setMostrarCard, setInputPesquisa , boxRef , carrinho } = hookcontext()
 
 
 
@@ -20,15 +20,8 @@ export default function ProdutosMl() {
     const [msg, setMsg] = useState('')
     const [mostraCircle, setMostrarCircle] = useState(false)
 
-   
-
-
-
-
- 
-
-
-
+    
+    
 
     async function exibirProdutosMl() {
 
@@ -141,11 +134,14 @@ export default function ProdutosMl() {
 
                         arrayML.map((itens) => {
 
-
-
+                            
+                            const carOn = carrinho.some((it)=> it.id === itens.id)
+                            const novoStyle = carOn ? { backgroundColor: 'var(--azul)' } : null;
+                            
+                        
                             return (
 
-                                <div key={itens.id} className={estiloML.card}>
+                                <div style={novoStyle}  className={estiloML.card}>
 
 
                                     <div className={estiloML.conteudo}>

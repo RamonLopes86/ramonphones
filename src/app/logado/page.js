@@ -6,6 +6,8 @@ import Slide from "@/components/sectionSlider/sectionSlide"
 
 export default function logado(){
 
+  
+
 
   
 

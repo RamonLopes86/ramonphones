@@ -14,6 +14,8 @@ export default function ContextProvaider({children}){
     const [modal , setModal] = useState(false)
     const [mostrarCard , setMostrarCard] = useState(false)
 
+    const[marcarItem , setMarcarItem] = useState(false)
+
 
     const boxRef = useRef(null)
     const refModalCar = useRef(null)
@@ -40,7 +42,9 @@ export default function ContextProvaider({children}){
       incrementarItem,
       boxRef,
       refModalCar,
-      clickModalOut
+      clickModalOut,
+      marcarItem,
+      setMarcarItem
      
     }
         
@@ -50,11 +54,10 @@ export default function ContextProvaider({children}){
 
     function addCarrinho(itemCarrinhoInical){
 
+      
 
-     
-
-   
       setCarrinho((carrinho)=>{
+
 
 
             const itemCarrinho = carrinho.find((produtos)=> produtos.id === itemCarrinhoInical.id)
@@ -71,11 +74,13 @@ export default function ContextProvaider({children}){
                         return{
 
                               ...produtos,
-                              count:produtos.count + 1
+                              count:produtos.count + 1,
+                              add:true
+                             
                         }
                      }
 
-
+                  
                      return produtos;
 
                   })
@@ -87,10 +92,10 @@ export default function ContextProvaider({children}){
             }else{
 
                   if(itemCarrinhoInical.count === 0){
-
+                   
                      return [
                         ...carrinho,
-                        {...itemCarrinhoInical , count:1}
+                        {...itemCarrinhoInical , count:1 , add:true}
                      ]
 
                   }else{
@@ -102,6 +107,9 @@ export default function ContextProvaider({children}){
 
 
             }
+
+
+
          
       })
 

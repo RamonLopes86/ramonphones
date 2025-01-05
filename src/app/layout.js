@@ -10,6 +10,7 @@ export default function RootLayout({ children }) {
     <ContextProvaider>
 
       <html lang="pt-br">
+      
         <body>
           {children}
         </body>

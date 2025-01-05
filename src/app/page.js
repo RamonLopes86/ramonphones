@@ -16,10 +16,6 @@ import TelaLogin from "@/components/telaLogin/telaLogin";
 export default function Home() {
 
 
-  
-
-
-
 
   return (
 
@@ -27,6 +23,7 @@ export default function Home() {
 
 
       <div style={{overflow:'hidden'}}>
+
 
 
           <TelaLogin/>
