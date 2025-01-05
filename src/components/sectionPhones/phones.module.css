@@ -1,0 +1,135 @@
+.boxPai{
+
+    background-color: black;
+    color: white;
+    font-family: var(--mon);
+    padding: 40px 10px;
+}
+
+.boxOverFlow > h1 {
+
+    text-transform: capitalize;
+    text-align: center;
+    padding: 40px 10px;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+
+.boxOverFlow{
+
+    border-top: 1px solid rgba(255, 255, 255, 0.493);
+    max-width: 1500px;
+    margin: 0px auto;
+    position: relative;
+    
+    
+    
+}
+
+
+.boxOverFlow > button{
+
+    position: absolute;
+    top: 50%;
+    width:  25px;
+    height: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #86F5FF;
+}
+
+
+.iconSeta{
+
+    width: 25px;
+    height: 25px;
+    color: white;
+    
+}
+
+.boxOverFlow > button:nth-of-type(2){
+
+    right: 0;
+}
+
+
+
+.img{
+
+    width: 300px;
+    height: 300px;
+    clip-path: inset(17px 49px);
+  
+    
+    
+}
+
+
+
+.cardPhones{
+
+    text-align: center;
+}
+
+.boxStar{
+
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.iconStar{
+
+    color: yellow;
+}
+
+.boxTx > p span{
+
+    color: green;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.boxTx > p:not(p:nth-of-type(1)){
+
+    font-size: 0.8rem;
+    
+
+}
+
+.cardPhones button{
+
+    display: block;
+    width:250px;
+    margin: 10px auto;
+    padding: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: normal;
+    background-color: #85dde6;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+
+
+@media screen and (max-width:1000px) {
+
+    .boxOverFlow > button{
+
+        visibility: hidden;
+    }
+
+}
+

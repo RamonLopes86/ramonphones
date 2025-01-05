@@ -141,7 +141,7 @@ export default function ProdutosMl() {
                         
                             return (
 
-                                <div style={novoStyle}  className={estiloML.card}>
+                                <div style={novoStyle} key={itens.id}  className={estiloML.card}>
 
 
                                     <div className={estiloML.conteudo}>

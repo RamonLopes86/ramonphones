@@ -1,6 +1,7 @@
 'use client'
 import { context } from "./context"
 import React , {useState , useEffect , useRef} from "react"
+import axios from "axios"
 
 export default function ContextProvaider({children}){
 
@@ -44,7 +45,8 @@ export default function ContextProvaider({children}){
       refModalCar,
       clickModalOut,
       marcarItem,
-      setMarcarItem
+      setMarcarItem,
+    
      
     }
         
@@ -231,6 +233,9 @@ export default function ContextProvaider({children}){
       }
 
    }
+
+
+
    
    
 

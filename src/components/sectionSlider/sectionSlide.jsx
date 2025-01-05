@@ -22,13 +22,13 @@ import hookcontext from '@/contexto/hookcontext';
 export default function Slide() {
 
 
-    const {clickModalOut} = hookcontext()
+    const {clickModalOut , comprarSlide} = hookcontext()
 
 
     const prevRef = useRef(null)
     const nextRef = useRef(null)
 
-    const [swiper, setSwiper] = useState(null)
+    const [swiper , setSwiper] = useState(null)
 
     useEffect(() => {
 
@@ -67,11 +67,6 @@ export default function Slide() {
                     spaceBetween={40}
                     grabCursor={true}
                     onSwiper={setSwiper}
-
-
-
-
-
 
 
                 >
