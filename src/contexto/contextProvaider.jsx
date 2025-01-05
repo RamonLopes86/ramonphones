@@ -167,6 +167,7 @@ export default function ContextProvaider({children}){
          if(boxRef.current && !boxRef.current.contains(target)){
 
                setMostrarCard(false)
+               setInputPesquisa('')
         }
 
 

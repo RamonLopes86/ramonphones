@@ -25,7 +25,9 @@ export default function Header(){
 
     const count = carrinho.reduce((acc , item)=> acc + item.count , 0)
 
+    const nomeLogado = localStorage.getItem('nome')
 
+   
     
 
 
@@ -115,7 +117,7 @@ export default function Header(){
                     
                     <button onClick={logout} type='button'>logout</button>
                     
-                    <p>Ola , Ramon Lopes</p>
+                    <p>ola , {nomeLogado}</p>
                 </div>
 
 

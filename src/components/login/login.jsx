@@ -35,9 +35,10 @@ export default function Login(){
         }
 
 
-        if(inputLogMail !== 'ramonlopes@gmail.com' && inputLogSenha !== 123){
+        if(inputLogMail !== 'ramonlopes@gmail.com' && inputLogSenha !== 123 && inputLogMail !== 'maria@gmail.com' && inputLogSenha !== 123){
 
              setMsgLogado('usuário não existe')
+            
 
              setTimeout(()=>{
 
@@ -51,6 +52,7 @@ export default function Login(){
 
             
         setMsgLogado('usuario  logado')
+        localStorage.setItem('nome' , inputLogMail)
 
          setTimeout(()=>{
 
