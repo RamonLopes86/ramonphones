@@ -1,3 +1,5 @@
+'use client'
+
 import hookcontext from '@/contexto/hookcontext';
 import estiloLogin from './login.module.css';
 import { useState } from 'react';
