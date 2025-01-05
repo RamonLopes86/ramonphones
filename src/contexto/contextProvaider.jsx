@@ -157,29 +157,61 @@ export default function ContextProvaider({children}){
 
    }
 
-        
+   
+
+
+   const clickModalProdutos = ({target}) =>{
+
+         
+     
+
+         if(boxRef.current && !boxRef.current.contains(target)){
+
+            setMostrarCard(false)
+            setInputPesquisa(atual => {
+
+               if(atual.length >= 2){
+
+                  return  setInputPesquisa('')
+               }
+
+               return atual;
+
+            })
+         }
+
+      
+
+   }
+
+   
+   const handleResize = () =>{
+
+      if(window.innerWidth > 670){
+
+         window.addEventListener('click' , clickModalProdutos)
+      }else{
+
+         window.removeEventListener('click' , clickModalProdutos)
+      }
+
+   }
+   
+
+
 
    useEffect(()=>{
 
-      const clickModalProdutos = ({target}) =>{
-
-         
-         if(boxRef.current && !boxRef.current.contains(target)){
-
-               setMostrarCard(false)
-               setInputPesquisa('')
-        }
-
-
-      }
-
-
-       document.addEventListener('click' , clickModalProdutos)
+   
+       window.addEventListener('resize' , handleResize)
+      
+       window.addEventListener('click' , clickModalProdutos)
+       
 
 
        return ()=>{
 
-         document.removeEventListener('click' , clickModalProdutos)
+         window.removeEventListener('click' , clickModalProdutos)
        }
 
    },[])
@@ -192,9 +224,9 @@ export default function ContextProvaider({children}){
          setModal(false)
       }
 
-   } 
-
-
+   }
+   
+   
 
     return(
 
