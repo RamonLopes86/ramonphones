@@ -54,7 +54,10 @@ export default function Login(){
 
             
         setMsgLogado('usuario  logado')
-        localStorage.setItem('nome' , inputLogMail)
+        
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('nome', inputLogMail);
+        }
 
          setTimeout(()=>{
 

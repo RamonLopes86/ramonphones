@@ -25,7 +25,7 @@ export default function Header(){
 
     const count = carrinho.reduce((acc , item)=> acc + item.count , 0)
 
-    const nomeLogado = localStorage.getItem('nome')
+    const nomeLogado = typeof window !== 'undefined' ? localStorage.getItem('nome') : '';
 
    
     
