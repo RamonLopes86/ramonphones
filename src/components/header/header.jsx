@@ -25,10 +25,16 @@ export default function Header(){
 
     const count = carrinho.reduce((acc , item)=> acc + item.count , 0)
 
-    const nomeLogado = typeof window !== 'undefined' ? localStorage.getItem('nome') : '';
+    const [nomeLogado , setNomeLogado] = useState('')
 
    
-    
+    useEffect(() => {
+        
+        if (typeof window !== 'undefined') {
+            const nome = localStorage.getItem('nome');
+            setNomeLogado(nome || '');
+        }
+    }, []); 
 
 
     function mostrarNav(){
