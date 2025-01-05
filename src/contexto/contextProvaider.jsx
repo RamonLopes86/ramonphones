@@ -163,8 +163,6 @@ export default function ContextProvaider({children}){
    const clickModalProdutos = ({target}) =>{
 
          
-     
-
          if(boxRef.current && !boxRef.current.contains(target)){
 
             setMostrarCard(false)
@@ -187,7 +185,7 @@ export default function ContextProvaider({children}){
    
    const handleResize = () =>{
 
-      if(window.innerWidth > 670){
+      if(window.innerWidth > 655){
 
          window.addEventListener('click' , clickModalProdutos)
       }else{
