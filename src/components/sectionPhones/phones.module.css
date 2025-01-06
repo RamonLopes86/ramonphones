@@ -31,9 +31,9 @@
 .boxOverFlow > button{
 
     position: absolute;
-    top: 50%;
+    top: 0%;
     width:  25px;
-    height: 40px;
+    height: 100%;
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -42,7 +42,7 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    background-color: #86F5FF;
+    background:transparent;
 }
 
 

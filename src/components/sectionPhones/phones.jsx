@@ -11,6 +11,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { MdOutlineKeyboardDoubleArrowRight , MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import hookcontext from '@/contexto/hookcontext';
 
 
 
@@ -19,6 +20,8 @@ export default function SectionPhones() {
     const [produtos, setProdutos] = useState([])
 
     const [swiper , setSwiper] = useState(null)
+
+   const {setInputPesquisa , setMostrarCard , inputPesquisa} = hookcontext()
 
     const prevRef = useRef(null)
     const nextRef = useRef(null)
@@ -53,7 +56,7 @@ export default function SectionPhones() {
 
                 const { results } = response.data
 
-                console.log(results)
+                
                 setProdutos(results)
 
 
@@ -62,6 +65,18 @@ export default function SectionPhones() {
 
 
     }, [])
+
+
+   
+
+
+
+
+    
+
+
+
+ 
 
 
 
@@ -133,6 +148,15 @@ export default function SectionPhones() {
                     grabCursor:true
 
                 },
+                320:{
+                    
+                    slidesPerView:1,
+                    slidesPerGroup:1,
+                    simulateTouch:true,
+                    grabCursor:true
+
+                },
+
                 
 
                 
