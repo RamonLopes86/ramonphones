@@ -69,13 +69,13 @@ export default function ModalCarrinho(){
                                                     </div>
                                                 </div>
 
-                                                <div className={estiloModalCar.boxFlexMais}>
+                                               
                                                     <div className={estiloModalCar.boxMais}>
                                                         <p onClick={()=>incrementarItem(itens.id , 's')} >+</p>
                                                         <p>{itens.count}</p>
                                                         <p onClick={()=> incrementarItem(itens.id , 'd')}>-</p>
                                                     </div>
-                                                </div>
+                                               
 
                                                 <FaRegTrashAlt onClick={()=>removeItemCarrinho(itens.id)} className={estiloModalCar.iconTrash}/>
                                             </div>

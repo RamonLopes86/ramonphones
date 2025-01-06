@@ -77,18 +77,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
     padding: 10px;
+    margin-bottom: 10px;
     
     
    
 }
 
-
-.boxCard{
-
-    margin-bottom: 10px;
-}
 
 
 .boxMsgModal{
@@ -108,13 +104,25 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    
+}
+
+
+.boxTx{
+
+   
+    max-width: 180px;
+    
+    
 }
 
 
 
 .boxTx > p {
 
-    padding: 2px;
+    padding: 5px 0px;
+    font-size: 0.8rem;
+    width: 100%;
 }
 
 .imageProduto{
@@ -134,26 +142,20 @@
     flex: none;
 }
 
-.boxFlexMais{
 
-    
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
 
 .boxMais{
 
     display: flex;
     flex-direction: row;
+    
     gap: 5px;
     align-items: center;
-    
+    justify-content: space-between;
     outline: 1px solid #86F5FF;
     padding: 5px;
     border-radius: 5px;
+    
 }
 
 
@@ -225,7 +227,7 @@
 
 
 
-@media screen and (max-width:410px) {
+ @media screen and (max-width:410px) {
 
 
      .boxCard{
@@ -240,6 +242,10 @@
         
         } 
         
+        .boxTx{
+
+            width: 100%;
+        }
      
      
      .iconTrash{
@@ -247,8 +253,8 @@
         position: absolute;
         bottom: 10px;
         right: 10px;
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
 
      }
 
@@ -277,10 +283,11 @@
         align-items: center;
         justify-content: center;
         
+        
      }
 
 
-}
+} 
 
 
 
