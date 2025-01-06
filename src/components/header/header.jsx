@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import ProdutosMl from '../sectionItensML/itensML';
 import hookcontext from '@/contexto/hookcontext';
 import ModalCarrinho from '../modalCarrinho/modalCarrinho';
+import Cookies from 'js-cookie';
 
 
 
@@ -28,13 +29,11 @@ export default function Header(){
     const [nomeLogado , setNomeLogado] = useState('')
 
    
-    useEffect(() => {
-        
-        if (typeof window !== 'undefined') {
-            const nome = localStorage.getItem('nome');
-            setNomeLogado(nome || '');
-        }
-    }, []); 
+    useEffect(()=>{
+
+        setNomeLogado(Cookies.get('nome').slice(0,5) + '...')
+
+    },[])
 
 
     function mostrarNav(){
@@ -60,11 +59,11 @@ export default function Header(){
 
     function logout(){
 
-        localStorage.removeItem('nome')
+       
 
         setTimeout(()=>{
 
-
+            Cookies.remove('auth_token')
             router.push('/')
 
         },1000)

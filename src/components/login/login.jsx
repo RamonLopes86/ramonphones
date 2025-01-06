@@ -4,6 +4,8 @@ import hookcontext from '@/contexto/hookcontext';
 import estiloLogin from './login.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
+
 
 
 export default function Login(){
@@ -37,7 +39,7 @@ export default function Login(){
         }
 
 
-        if(inputLogMail !== 'ramonlopes@gmail.com' && inputLogSenha !== 123 && inputLogMail !== 'maria@gmail.com' && inputLogSenha !== 123){
+        if(inputLogMail !== 'ramonlopes@gmail.com' && inputLogSenha !== 123){
 
              setMsgLogado('usuário não existe')
             
@@ -54,10 +56,12 @@ export default function Login(){
 
             
         setMsgLogado('usuario  logado')
+
+        Cookies.set('auth_token' , 123)
+
+        Cookies.set('nome', inputLogMail)
         
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('nome', inputLogMail);
-        }
+        
 
          setTimeout(()=>{
 

@@ -25,6 +25,7 @@
     
     
     
+    
 }
 
 
@@ -43,6 +44,7 @@
     border: none;
     cursor: pointer;
     background:transparent;
+
 }
 
 
@@ -60,22 +62,44 @@
 }
 
 
-
-.img{
+.boxImage{
 
     width: 300px;
     height: 300px;
-    clip-path: inset(17px 49px);
+    border-radius: 250px;
+    overflow: hidden;
+    margin: 20px 0px;
+    
+
+}
+
+.img{
+
+width: 100%;
+height: fit-content;
+   
+}
+    
   
     
     
-}
 
 
 
 .cardPhones{
 
     text-align: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & h1{
+
+    width: 100%;
+    text-align: center;
+    }
 }
 
 .boxStar{

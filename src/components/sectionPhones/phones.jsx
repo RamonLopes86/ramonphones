@@ -56,7 +56,7 @@ export default function SectionPhones() {
 
                 const { results } = response.data
 
-                
+                console.log(results)
                 setProdutos(results)
 
 
@@ -179,7 +179,9 @@ export default function SectionPhones() {
                                     <div  className={estiloPhone.cardPhones}>
                                         <h1>{item.title.slice(0, 15)}</h1>
                                         
-                                            <Image className={estiloPhone.img} alt={item.title} width={100} height={100} quality={100} src={item.thumbnail} />
+                                            <div className={estiloPhone.boxImage}>
+                                                <Image className={estiloPhone.img} alt={item.title} width={1000} height={1000} quality={100} src={item.thumbnail.replace( /\.(jpg|jpeg|png|gif|bmp|webp|tiff)/i, "W$&")}  />
+                                            </div>
                                        
                                         <div className={estiloPhone.boxStar}>
                                             <FaStar className={estiloPhone.iconStar} />
