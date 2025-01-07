@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 import Image from 'next/image'
 import Cookies from 'js-cookie'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 
@@ -15,9 +15,23 @@ export default function Comprar(){
 
     const router = useRouter()
 
-    const carro = JSON.parse(localStorage.getItem('car'))
+    const [carroLocal , setCarroLocal] = useState([])
 
-    const total = carro.reduce((acc , it)=> (it.price * it.count) + acc  , 0)
+
+    useEffect(()=>{
+
+        if(typeof window !== undefined){
+
+            const carro = JSON.parse(localStorage.getItem('car'))
+
+            setCarroLocal(carro)
+        }
+
+    },[])
+
+   
+
+    const total = carroLocal.reduce((acc , it)=> (it.price * it.count) + acc  , 0)
 
   
 
@@ -51,7 +65,7 @@ export default function Comprar(){
 
                     {
 
-                        carro.map((itens)=>{
+                        carroLocal.map((itens)=>{
 
                             return(
 
@@ -82,7 +96,7 @@ export default function Comprar(){
 
                 </div>
 
-                <div style={carro.length === 0 ? {display:'none'}:{display:'flex'}} className={estiloComp.boxTotal}>
+                <div style={carroLocal.length === 0 ? {display:'none'}:{display:'flex'}} className={estiloComp.boxTotal}>
 
                     <p>Total : <span>{dinheiro(total , "BRL")}</span></p>
                     <div className={estiloComp.boxBtn}>
