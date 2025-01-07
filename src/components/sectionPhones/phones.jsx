@@ -89,7 +89,7 @@ export default function SectionPhones() {
 
     return (
 
-        <section className={estiloPhone.boxPai}>
+        <section id='idPhones' className={estiloPhone.boxPai}>
 
 
 

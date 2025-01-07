@@ -18,7 +18,15 @@ export default function ModalCarrinho(){
 
     const total = carrinho.reduce((acc , item)=> acc + item.price * item.count , 0)
 
-    localStorage.setItem('car' , JSON.stringify(carrinho))
+   
+    useEffect(()=>{
+
+        if(typeof window !== undefined){
+
+            localStorage.setItem('car' , JSON.stringify(carrinho))
+        }
+
+    },[carrinho])
 
 
     function openAlert(){

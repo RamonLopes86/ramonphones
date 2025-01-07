@@ -93,7 +93,7 @@ export default function Acessorios(){
     return(
 
 
-       <section className={estiloAcess.boxAcessorios}>
+       <section id='idacessorios' className={estiloAcess.boxAcessorios}>
 
                 <h1>Acessórios</h1>
 

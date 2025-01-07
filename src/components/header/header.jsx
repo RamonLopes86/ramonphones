@@ -11,6 +11,7 @@ import ProdutosMl from '../sectionItensML/itensML';
 import hookcontext from '@/contexto/hookcontext';
 import ModalCarrinho from '../modalCarrinho/modalCarrinho';
 import Cookies from 'js-cookie';
+import Link from 'next/link';
 
 
 
@@ -87,11 +88,19 @@ export default function Header(){
 
                         <nav className={navAnima ? estiloHeader.animaNavOn : estiloHeader.animaNavOff}>
                             <ul>
-                                <li>Iphones</li>
-                                <li>Smartphones</li>
-                                <li>ApplaWatch</li>
-                                <li>Acessórios</li>
-                            </ul>
+                                <Link className={estiloHeader.link} href={'#idPhones'} >
+                                    <li>Iphones</li>
+                                </Link>
+                                <Link className={estiloHeader.link} href={'#'} >
+                                    <li>Smartphones</li>
+                                </Link>
+                                <Link className={estiloHeader.link} href={'#'} >
+                                    <li>ApplaWatch</li>
+                                </Link>
+                                <Link className={estiloHeader.link} href={'#idacessorios'}>
+                                    <li>Acessórios</li>
+                                </Link>
+                            </ul> 
                         </nav>
 
                     </div>

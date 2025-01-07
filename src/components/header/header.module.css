@@ -15,10 +15,18 @@
     right: 0;
     z-index: 2;
     
+}
+
+
+.link{
+
+    color: white;
+    text-decoration: none;
+
+}
     
    
 
-}
 
 .boxInput{
 
