@@ -47,6 +47,19 @@
     background-color: var(--azul) !important ;
 }
 
+::-webkit-scrollbar{
+
+  width: 5px;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background-color: var(--azul);
+  border-radius: 50px;
+  
+}
+
 
 
 

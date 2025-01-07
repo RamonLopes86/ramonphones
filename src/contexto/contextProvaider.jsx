@@ -14,8 +14,9 @@ export default function ContextProvaider({children}){
     const [carrinho , setCarrinho] = useState([])
     const [modal , setModal] = useState(false)
     const [mostrarCard , setMostrarCard] = useState(false)
-
     const[marcarItem , setMarcarItem] = useState(false)
+    const [alertFinalCompra , setAlertFinalCompra] = useState(false)
+
 
 
     const boxRef = useRef(null)
@@ -46,6 +47,8 @@ export default function ContextProvaider({children}){
       clickModalOut,
       marcarItem,
       setMarcarItem,
+      alertFinalCompra,
+      setAlertFinalCompra
     
      
     }

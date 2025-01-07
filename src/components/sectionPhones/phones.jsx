@@ -21,7 +21,9 @@ export default function SectionPhones() {
 
     const [swiper , setSwiper] = useState(null)
 
-   const {setInputPesquisa , setMostrarCard , inputPesquisa} = hookcontext()
+    const [loadPhone , setLoadPhone] = useState(true)
+
+   
 
     const prevRef = useRef(null)
     const nextRef = useRef(null)
@@ -43,6 +45,8 @@ export default function SectionPhones() {
 
     useEffect(() => {
 
+        setLoadPhone(true)
+
         const limite = {
 
             params: {
@@ -56,8 +60,10 @@ export default function SectionPhones() {
 
                 const { results } = response.data
 
-                console.log(results)
+               
                 setProdutos(results)
+
+                setLoadPhone(false)
 
 
             })
@@ -93,8 +99,17 @@ export default function SectionPhones() {
 
                 <h1>Iphones</h1>
               
+                    {
 
+                        loadPhone ? (
 
+                            <div className={estiloPhone.boxLoadPhone}>
+                                <h1>carregando ...</h1>
+                            </div>
+
+                        ):(
+
+                            
                 <Swiper
                 
                 modules={[Pagination , Navigation , Autoplay]}
@@ -114,27 +129,29 @@ export default function SectionPhones() {
               onSwiper={setSwiper}
               breakpoints={{
 
-                1200:{
-
+                1400:{
                     slidesPerGroup:4,
                     slidesPerView:4,
                     simulateTouch:false,
                     grabCursor:false
+
                 },
 
-                1000:{
-                    
+                1200:{
+
+                 
                     slidesPerView:3,
-                    slidesPerGroup:4,
+                    slidesPerGroup:2,
                     simulateTouch:false,
                     grabCursor:false
-
                 },
 
-                800:{
+               
+
+                900:{
                     
                     slidesPerView:2,
-                    slidesPerGroup:2,
+                    slidesPerGroup:1,
                     simulateTouch:true,
                     grabCursor:true
 
@@ -210,6 +227,12 @@ export default function SectionPhones() {
 
                     }
                 </Swiper>
+
+                        )
+
+
+                    }
+
 
                         <button ref={prevRef} type='button'><MdOutlineKeyboardDoubleArrowLeft className={estiloPhone.iconSeta}/></button>
                         <button ref={nextRef} type='button'><MdOutlineKeyboardDoubleArrowRight className={estiloPhone.iconSeta}/></button>

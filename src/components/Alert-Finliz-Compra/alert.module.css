@@ -1,0 +1,89 @@
+.boxFinalizar{
+
+    font-family: var(--mon);
+    text-align: center;
+    color: white;
+    width: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+    outline: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.788);
+ 
+    
+}
+
+
+.boxFinalizar .alert h2{
+
+   width: 100%;
+   text-align: center;
+   font-size: 1rem;
+   font-weight: normal;
+   padding: 10px 5px;
+}
+
+.boxBtn{
+
+    width: 100%;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boxBtn button {
+
+    border: none;
+}
+
+.boxBtn > button:nth-of-type(1){
+
+    background-color: #08C708;
+
+}
+
+.boxBtn > button:nth-of-type(2){
+
+    background-color: rgba(228, 21, 21, 0.877);
+
+}
+
+.boxBall{
+
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.boxBall > p {
+
+    color: #08C708;
+}
+
+.iconBall{
+
+    color:  #08C708;
+    animation: animaBall 1.5s linear infinite;
+
+
+}
+
+@keyframes animaBall {
+
+    to{
+
+        transform: rotate(360deg);
+        transition: all 1s linear;
+
+    }
+}
+
+

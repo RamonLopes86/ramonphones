@@ -3,8 +3,19 @@
     background-color: black;
     width: 100%;
     padding: 200px 0px 100px 0px;
+    font-family: var(--mon);
     
   
+}
+
+.boxPaiSlide > h1 {
+
+    color: white;
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
+    padding: 20px 0px 40px 0px;
+
 }
 
 .sliders{
@@ -190,6 +201,22 @@
         font-size: 1.3rem;
         padding: 20px;
 
+    }
+
+}
+
+
+@media screen and (max-width:650px) {
+
+    .boxPaiSlide > h1 {
+
+        padding-top: 100px;
+    }
+
+    .boxImage > .image{
+
+        width: 60%;
+        
     }
 
 }

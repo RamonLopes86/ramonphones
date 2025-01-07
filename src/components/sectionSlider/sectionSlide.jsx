@@ -47,6 +47,8 @@ export default function Slide() {
 
         <section onClick={clickModalOut} className={estiloSlode.boxPaiSlide}>
 
+                <h1>Ofertas do dia</h1>
+
             <section className={estiloSlode.sliders}>
                 <Swiper
 

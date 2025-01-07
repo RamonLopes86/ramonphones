@@ -9,7 +9,7 @@ const celdados = [
 {
     id:1,
     img:phone1,
-    tit:"iphone 16 pro cinza",
+    tit:"iphone 16 pro 128GB cinza",
     antigo:6000,
     preco:4599
 },
