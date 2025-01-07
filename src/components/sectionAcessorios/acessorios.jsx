@@ -20,6 +20,7 @@ export default function Acessorios(){
     const [arrayAcessorios , setArrayAcessorios] = useState([])
     const [tx , setTx] = useState('acessorios de celular')
     const [load , setLoad] = useState(true)
+    const [btnActive , setBtnActive] = useState('')
 
 
     useEffect(()=>{
@@ -63,27 +64,37 @@ export default function Acessorios(){
 
         if(param === 'acessorios'){
 
-            return   setTx('acessorios de celular')
+               setTx('acessorios de celular')
+               setBtnActive('acessorios')
+               return;
         }
 
         if(param === 'cabos'){
 
-            return setTx('cabos para celular')
+             setTx('cabos para celular')
+             setBtnActive('cabos')
+             return;
+            
         }
         
         if(param === 'peliculas'){
 
-            return setTx('peliulas de celular')
+             setTx('peliulas de celular')
+             setBtnActive('peliculas')
         }
 
         if(param === 'capas'){
 
-            return setTx('capas de celular')
+             setTx('capas de celular')
+             setBtnActive('capas')
+             return;
         }
 
         if(param === 'fontes'){
 
             setTx('fontes para celular')
+            setBtnActive('fontes')
+            return;
         }
     }
 
@@ -99,11 +110,11 @@ export default function Acessorios(){
 
                 <div className={estiloAcess.categorias}>
 
-                    <button onClick={()=>clikCategorias('acessorios')} type="button">Acessórios</button>
-                    <button onClick={()=>clikCategorias('cabos')} type="button">Cabos</button>
-                    <button onClick={()=>clikCategorias('peliculas')} type="button">Películas</button>
-                    <button onClick={()=>clikCategorias('capas')} type="button">Capas</button>
-                    <button onClick={()=>clikCategorias('fontes')} type="button">Fonte</button>
+                    <button style={btnActive === 'acessorios' ? {backgroundColor:'#05E5FA'} : null }  onClick={()=>clikCategorias('acessorios')} type="button">Acessórios</button>
+                    <button style={btnActive === 'cabos' ? {backgroundColor:'#05E5FA'} : null }   onClick={()=>clikCategorias('cabos')} type="button">Cabos</button>
+                    <button style={btnActive === 'peliculas' ? {backgroundColor:'#05E5FA'} : null }   onClick={()=>clikCategorias('peliculas')} type="button">Películas</button>
+                    <button style={btnActive === 'capas' ? {backgroundColor:'#05E5FA'} : null }   onClick={()=>clikCategorias('capas')} type="button">Capas</button>
+                    <button style={btnActive === 'fontes' ? {backgroundColor:'#05E5FA'} : null }   onClick={()=>clikCategorias('fontes')} type="button">Fonte</button>
 
                 </div>
 
