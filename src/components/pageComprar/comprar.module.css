@@ -1,0 +1,189 @@
+.boxPai{
+
+    background-color: var(--preta);
+    font-family: var(--mon);
+    min-height: 100vh;
+    color: white;
+}
+
+.boxPai > h1 {
+
+    width: 100%;
+    text-align: center;
+    padding: 40px 10px;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+
+.boxFilho{
+
+    max-width: 1500px;
+    margin: 0px auto;
+    overflow: auto;
+    height: 500px;
+    padding: 10px 20px;
+
+    
+}
+
+
+
+.card{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: rgba(128, 128, 128, 0.178);
+    
+}
+
+
+
+.card:not(.card:nth-of-type(1)){
+
+    margin: 40px 0px;
+}
+
+.boxImg{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+   
+    
+}
+
+.boxImg > p {
+
+    text-transform: capitalize;
+    
+}
+
+.img{
+
+    clip-path: circle();
+    width: 100px;
+    height: 100px;
+}
+
+.boxPreco{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+    
+}
+
+.boxPreco > p:first-of-type{
+
+    background-color: white;
+    color: gray;
+    font-weight: 600;
+    border-radius: 50%;
+    padding: 6px;
+    width: 35px;
+    height: 35px;
+    align-content: center;
+    text-align: center;
+}
+
+
+.boxTotal{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 40px;
+    max-width: 1500px;
+    margin: 0px auto;
+    gap: 20px;
+    
+
+}
+
+.boxTotal > p {
+
+    font-size: 1.4rem;
+}
+
+.boxTotal > p > span {
+
+    color: green;
+    font-size: 2rem;
+   
+}
+
+.boxBtn{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+
+}
+
+.boxBtn > button{
+
+    width: 100px;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+
+
+}
+
+.boxBtn > button:nth-of-type(1){
+
+    background-color:var(--azul);
+    
+}
+
+.boxBtn > button:nth-of-type(2){
+
+    background-color:rgba(219, 30, 30, 0.938);
+}
+
+
+
+@media screen  and (max-width:680px){
+
+        .boxImg{
+
+            display: flex;
+            flex-direction: column;
+        }
+
+}
+
+
+@media screen and ( max-width:500px) {
+
+    .card{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+}
+
+
+

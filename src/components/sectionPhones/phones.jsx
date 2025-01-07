@@ -130,10 +130,11 @@ export default function SectionPhones() {
               breakpoints={{
 
                 1400:{
-                    slidesPerGroup:4,
+                    
                     slidesPerView:4,
                     simulateTouch:false,
                     grabCursor:false
+                    
 
                 },
 

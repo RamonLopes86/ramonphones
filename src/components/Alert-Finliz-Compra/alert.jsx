@@ -5,6 +5,7 @@ import hookcontext from '@/contexto/hookcontext';
 import { useRouter } from 'next/navigation';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useState } from 'react';
+import Cookies from 'js-cookie';
 
 
 
@@ -12,7 +13,7 @@ export default function Alert() {
 
     const router = useRouter()
 
-    const { alertFinalCompra , setAlertFinalCompra , carrinho } = hookcontext()
+    const { alertFinalCompra , setAlertFinalCompra , carrinho} = hookcontext()
 
     const [ballAnima , setBallAnima]= useState(false)
 
@@ -23,10 +24,13 @@ export default function Alert() {
     function goComprar(){
 
         setBallAnima(true)
+        
 
         setTimeout(()=>{
 
             router.push('/comprar')
+            Cookies.set('auth_token_comp' , 12525)
+            setAlertFinalCompra(false)
 
         },2000)
 
